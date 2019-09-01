@@ -35,7 +35,7 @@ class ProtoTest {
         if (p != null) {
             val toByteArray = p.toByteArray()
             val parseFrom = PersonOuterClass.Person.parseFrom(toByteArray)
-            System.out.println(String.format("deserialize person: %s", parseFrom))
+            System.out.println(String.format("deserialize person\n: %s", parseFrom))
         }
     }
 }
