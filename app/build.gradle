@@ -47,6 +47,8 @@ dependencies {
 
     // 定义 protobuf 依赖，使用精简版
     implementation "com.google.protobuf:protobuf-lite:3.0.0"
+
+    implementation 'com.google.code.gson:gson:2.8.5'
 }
 
 
