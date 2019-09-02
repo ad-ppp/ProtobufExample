@@ -25,4 +25,22 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"/>
 
+    <Button
+            android:id="@+id/btnSerializeIntent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="transmit by Serialize Intent"
+            app:layout_constraintTop_toBottomOf="@id/btnJsonIntent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+            android:id="@+id/btnParcelableIntent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="transmit by Parcelable Intent"
+            app:layout_constraintTop_toBottomOf="@id/btnSerializeIntent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
 </android.support.constraint.ConstraintLayout>

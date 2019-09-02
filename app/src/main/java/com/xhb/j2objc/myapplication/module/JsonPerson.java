@@ -1,14 +1,22 @@
 package com.xhb.j2objc.myapplication.module;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class JsonPerson {
+// error when implements Parcelable interface?
+public class JsonPerson implements Serializable {
     private int id;
     private String name;
     private String email;
     private List<PhoneNumber> phoneNumbers;
+    private static final long serialVersionUID = 1L;
 
-    public static class PhoneNumber {
+    public JsonPerson() {
+    }
+
+    public static class PhoneNumber implements Serializable {
+        private static final long serialVersionUID = 1L;
+
         private String number;
         private PhoneType phoneType;
 
@@ -73,7 +81,7 @@ public class JsonPerson {
         this.phoneNumbers = phoneNumbers;
     }
 
-    public enum PhoneType {
+    public enum PhoneType implements Serializable {
         MOBILE,
         HOME,
         WORK

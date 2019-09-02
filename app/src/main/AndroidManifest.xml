@@ -19,6 +19,8 @@
 
         <activity android:name=".TransmitByProtobufActivity"/>
         <activity android:name=".TransmitByJsonActivity"/>
+        <activity android:name=".TransmitBySerializeActivity"/>
+        <activity android:name=".TransmitByParcelableActivity"/>
     </application>
 
 </manifest>
