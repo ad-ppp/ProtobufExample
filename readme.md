@@ -35,8 +35,8 @@ Process finished with exit code 0
 
 ### Mock Android Intent 传输，序列化日志对比
 ```
-2019-09-01 20:54:01.915 2988-2988/com.xhb.j2objc.myapplication D/TransmitByProtobufActivity: get entity cost 880838 ns 
-    # com.xhb.j2objc.myapplication.module.PersonOuterClass$Person@1c3b2e8f
+2019-09-02 00:19:37.528 6408-6408/com.xhb.j2objc.myapplication D/TransmitByProtobufActivity: get entity 1 times cost 868266 ns 
+    # com.xhb.j2objc.myapplication.module.PersonOuterClass$Person@21d5cccc
     email: "847564732@qq.com"
     id: 1
     name: "jacky"
@@ -44,6 +44,16 @@ Process finished with exit code 0
       number: "18516606250"
       type: WORK
     }
-2019-09-01 20:54:05.902 2988-2988/com.xhb.j2objc.myapplication D/TransmitByJsonActivity: get entity cost 2692801 ns 
-    JsonPerson{id=1, name='jacky', email='847564732@qq.com', phoneNumbers=[PhoneNumber{number='18516606250', phoneType=WORK}]}
+    phone {
+      number: "18516606251"
+      type: HOME
+    }
+2019-09-02 00:19:41.552 6408-6408/com.xhb.j2objc.myapplication D/TransmitByJsonActivity: get entity 1 times cost 7049220 ns 
+    JsonPerson{id=1, name='jacky', email='847564732@qq.com', phoneNumbers=[PhoneNumber{number='18516606250', phoneType=WORK}, PhoneNumber{number='18516606251', phoneType=HOME}]}
+2019-09-02 00:19:43.533 6408-6408/com.xhb.j2objc.myapplication D/TransmitBySerializeActivity: get entity 1 times cost 1925664 ns 
+    JsonPerson{id=1, name='jacky', email='847564732@qq.com', phoneNumbers=[PhoneNumber{number='18516606250', phoneType=WORK}, PhoneNumber{number='18516606251', phoneType=HOME}]}
+2019-09-02 00:19:45.361 6408-6408/com.xhb.j2objc.myapplication D/TransmitByParcelableActivity: get entity 1 times cost 1270552 ns 
+    ParcelablePerson{id=1, name='jacky', email='847564732@qq.com', phoneNumbers=[PhoneNumber{number='18516606250', phoneType=WORK}, PhoneNumber{number='18516606251', phoneType=HOME}]}
 ```
+
+效率对比： Protobuf > Parcelabel > Serializable > Json

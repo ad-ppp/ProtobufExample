@@ -6,6 +6,7 @@ import android.util.Log
 
 abstract class BaseActivity<T> : AppCompatActivity() {
     private lateinit var TAG: String
+    private val times = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -13,12 +14,12 @@ abstract class BaseActivity<T> : AppCompatActivity() {
 
         val start = System.nanoTime()
         var person: T? = null
-        for (i in 0..100) {
+        for (i in 0..times) {
             person = getEntity()
         }
 
         val end = System.nanoTime() - start
-        Log.d(TAG, "get entity 100 times cost $end ns \n$person")
+        Log.d(TAG, "get entity $times times cost $end ns \n$person")
     }
 
     abstract fun getEntity(): T
